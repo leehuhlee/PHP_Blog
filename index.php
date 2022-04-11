@@ -39,7 +39,7 @@ $posts = array_map(function ($post) {
     $mappings = array_merge(
         compact('username', 'content'),
         [
-            'created_at' => date('h:i A, M, j', strtotime($post['created_at'])),
+            'created_at' => date('h:i A  M. j', strtotime($post['created_at'])),
             'url'        => '/post/read.php?id=' . $post['id']
         ]
     );
