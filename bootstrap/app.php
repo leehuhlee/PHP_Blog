@@ -7,7 +7,7 @@ ini_set('display_errors', 'Off');
 $GLOBALS['DB_CONNECTION'] = mysqli_connect(
     'localhost',
     'root',
-    'root',
+    'admin123',
     'phpblog'
 );
 

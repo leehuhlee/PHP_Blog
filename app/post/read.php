@@ -60,7 +60,7 @@ if($userId && isset($user)){
             <?=$createdAt?>
             <?php if(isset($isOwner)) : ?>
                 <span class="owner">
-                    <a href="/post/delete_process.php?id=<?=$id?>$token=<?=$_SESSION['CSRF_TOKEN']?>" class="uk-link-text" id="delete">Delete</a>
+                    <a href="/post/delete_process.php?id=<?=$id?>&token=<?=$_SESSION['CSRF_TOKEN']?>" class="uk-link-text" id="delete">Delete</a>
                     <a href="/post/update.php?id=<?=$id?>" class="uk-link-text" id="delete">Update</a>
                 </span>
             <?php endif; ?>
