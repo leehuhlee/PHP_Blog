@@ -1,4 +1,7 @@
+<?php $_SESSION['CSRF_TOKEN'] = bin2hex(random_bytes(32)); ?>
+
 <!DOCTYPE html>
+
 <html lang="en">
     <head>
         <meta charset="UTF-8">
@@ -27,4 +30,12 @@
                 </div>
             </nav>
             <main id="main" role="main">
-                
+                <?php require_once dirname(__DIR__) . '/' . $view . 'php'?>
+            </main>
+        </div>
+    </body>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.13.7/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.13.7/dist/js/uikit-icons.min.js"></script>
+    <script src="https://cdn.ckeditor.com/ckeditor5/33.0.0/balloon-block/ckeditor.js"></script>
+    <script src="/app.js"></script>
+</html>

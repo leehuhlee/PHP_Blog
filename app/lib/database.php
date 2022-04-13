@@ -12,7 +12,7 @@ function close(){
     return false;
 }
 
-function first($query, $params){
+function first($query, ...$params){
     return raw($query, $params, function($result){
         if($row = mysqli_fetch_assoc($result)){
             if(is_array($row) && count($row) > 0 ){
