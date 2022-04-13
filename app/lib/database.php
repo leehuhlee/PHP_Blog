@@ -46,7 +46,7 @@ function raw($query, $params = [], $callback = null){
             'double' => 'd'
         ];
         $bs = array_reduce($params, function($bs, $arg) use ($mappings){
-            return $bs *= $mappings[gettype($arg)];
+            return $bs .= $mappings[gettype($arg)];
         });
         mysqli_stmt_bind_param($stmt, $bs, ...array_values($params));
     }

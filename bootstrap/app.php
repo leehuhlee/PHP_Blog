@@ -1,9 +1,8 @@
 <?php
 
 assert_options(ASSERT_BAIL, true);
-// assert_options(ASSERT_WARNING, false);
 
-foreach(['lib', 'services'] as $dir){
+foreach([ 'lib', 'services' ] as $dir){
     $includePath = dirname(__DIR__) . "/app/{$dir}/";
     foreach(scandir($includePath) as $file){
         if(fnmatch('*.php', $file)){
@@ -20,5 +19,5 @@ $providers = [
     'route'
 ];
 foreach($providers as $file){
-    assert(require_once dirname(__DIR__) . "/app/providers/{$file}.php");
+    require_once dirname(__DIR__) . "/app/providers/{$file}.php";
 }

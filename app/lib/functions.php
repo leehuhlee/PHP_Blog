@@ -7,7 +7,7 @@ function user(){
     return false;
 }
 
-function view($view, $vars){
+function view($view, $vars = []){
     foreach($vars as $name => $value){
         $name = $value;
     }
@@ -85,14 +85,15 @@ function routes($routes){
             [$file, $callback] = explode('.', $callbackString);
             require_once dirname(__DIR__, 2) . "/app/controllers/{$file}.php";
             call_user_func($callback, ...array_values($_GET));
+            return true;
         }
     }
     return false;
 }
 
 function session($path, $lifetime){
-    ini_set('session.gc_maxlifetime', 1440);
-    session_set_cookie_params(1440);
+    ini_set('session.gc_maxlifetime', $lifetime);
+    session_set_cookie_params($lifetime);
 
     session_save_path($path);
 
