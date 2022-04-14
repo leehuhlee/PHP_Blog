@@ -9,7 +9,7 @@ function user(){
 
 function view($view, $vars = []){
     foreach($vars as $name => $value){
-        $name = $value;
+        $$name = $value;
     }
     return require_once dirname(__DIR__, 2) . '/resources/views/layouts/app.php';
 }
@@ -117,7 +117,7 @@ function transform($posts){
         $mappings = array_merge(compact('username', 'content'),
             [
                 'created_at' => date('h:i A  M. j', strtotime($post['created_at'])),
-                'url'        => '/post/read.php?id=' . $post['id']
+                'url'        => '/post/read?id=' . $post['id']
             ]
         );
         return array_merge($post, $mappings);
