@@ -5,7 +5,6 @@ function create(){
 }
 
 function store(){
-    
     return base(function ($args){
         return createUser(...array_values($args)) ?? redirect('/auth/login');
     });
@@ -18,7 +17,7 @@ function edit(){
 function update(){
     return base(function ($args){
         $args = array_merge($args, ['id' => user()['id']]);
-        return updateUseR(...array_values($args)) && redirect('/auth/login');
+        return updateUser(...array_values($args)) && redirect('/auth/login');
     });
 }
 
