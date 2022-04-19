@@ -6,7 +6,7 @@ function create(){
 
 function store(){
     return base(function ($args){
-        return createUser(...array_values($args)) ?? redirect('/auth/login');
+        return createUser(...array_values($args)) && redirect('/auth/login');
     });
 }
 
