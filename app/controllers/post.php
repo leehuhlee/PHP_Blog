@@ -1,6 +1,6 @@
 <?php
 
-function creatE(){
+function create(){
     return view('post', ['requestUrl' => '/post/write']);
 }
 
