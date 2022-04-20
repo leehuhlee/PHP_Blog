@@ -2,5 +2,5 @@
 
 return [
     'path' => dirname(__DIR__) . '/storage/app/images/',
-    'accepts' => ['png', 'jüg']
+    'accepts' => ['png', 'jpg']
 ];
